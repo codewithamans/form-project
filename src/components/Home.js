@@ -37,9 +37,9 @@ function Home() {
       cleanrating: data.cleanrating,
       overallexp: data.overallexp,
     };
-    console.log([...formvalue, val]);
+    let arr = [...formvalue, val];
     setFormvalue([...formvalue, val]);
-    localStorage.setItem("form", JSON.stringify(formvalue));
+    localStorage.setItem("form", JSON.stringify(arr));
   };
   useEffect(() => {
     const data = localStorage.getItem("form");

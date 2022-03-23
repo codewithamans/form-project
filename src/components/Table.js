@@ -5,7 +5,6 @@ function Table() {
 
   useEffect(() => {
     const storedval = localStorage.getItem("form");
-    console.log(storedval);
     if (!storedval) {
       setValue([
         {
@@ -22,7 +21,6 @@ function Table() {
       setValue(JSON.parse(storedval));
     }
   }, []);
-  console.log(value);
   return (
     <>
       <div className="container">
