@@ -44,6 +44,9 @@ function Home() {
   useEffect(() => {
     const data = localStorage.getItem("form");
     setFormvalue([JSON.parse(data)]);
+    if (formvalue[0] == null) {
+      setFormvalue([]);
+    }
   }, []);
   return (
     <>
