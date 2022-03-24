@@ -39,10 +39,10 @@ function Home() {
     };
     // let arr = [...formvalue, val];
     setFormvalue([...formvalue, val]);
-    localStorage.setItem("form2", JSON.stringify([...formvalue, val]));
+    localStorage.setItem("form", JSON.stringify([...formvalue, val]));
   };
   useEffect(() => {
-    const data = localStorage.getItem("form2");
+    const data = localStorage.getItem("form");
     setFormvalue([JSON.parse(data)]);
   }, []);
   return (
