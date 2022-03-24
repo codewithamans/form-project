@@ -18,10 +18,10 @@ function Home() {
     name = e.target.name;
     value = e.target.value;
     setData({ ...data, [name]: value });
-    if (data.cname && data.email && data.phno) {
-      setDisabled(false);
-    } else {
+    if (!data.cname || !data.email || !data.phno) {
       setDisabled(true);
+    } else {
+      setDisabled(false);
     }
   };
 
@@ -37,13 +37,13 @@ function Home() {
       cleanrating: data.cleanrating,
       overallexp: data.overallexp,
     };
-    let arr = [...formvalue, val];
+    // let arr = [...formvalue, val];
     setFormvalue([...formvalue, val]);
-    localStorage.setItem("form", JSON.stringify(arr));
+    localStorage.setItem("form2", JSON.stringify([...formvalue, val]));
   };
   useEffect(() => {
-    const data = localStorage.getItem("form");
-    setFormvalue(JSON.parse(data));
+    const data = localStorage.getItem("form2");
+    setFormvalue([JSON.parse(data)]);
   }, []);
   return (
     <>
